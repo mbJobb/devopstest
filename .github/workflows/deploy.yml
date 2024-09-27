@@ -1,9 +1,6 @@
-  on:
-    push:
-      branches:
-        -main
+  on: [push]
 
-  defaults:
+  jobs:
     -run: aws s3 api list-buckets --query "Buckets[].Name"
     -env:
       AWS-ACCESS-KEY-ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
