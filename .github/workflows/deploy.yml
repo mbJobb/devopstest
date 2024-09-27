@@ -1,9 +1,10 @@
   on: push
 
   jobs:
-    - name: print buckets
-      run: aws s3-describe
-      env:
-        AWS-ACCESS-KEY-ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS-SECRET-ACCESS-KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: eu-west-1
+      list_buckets:
+        steps:
+          -run: aws s3-describe
+            env:
+              AWS-ACCESS-KEY-ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+              AWS-SECRET-ACCESS-KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+              aws-region: eu-west-1
