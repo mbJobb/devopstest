@@ -2,6 +2,7 @@
 
   jobs:
       list_buckets:
+        runs-on: ubuntu-latest
         steps:
         - run: aws s3-describe
           env:
