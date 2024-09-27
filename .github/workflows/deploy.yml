@@ -1,7 +1,7 @@
   on: [push]
 
   jobs:
-    -run: aws s3 api list-buckets --query "Buckets[].Name"
+    -run: aws s3-describe
     -with:
       AWS-ACCESS-KEY-ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS-SECRET-ACCESS-KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
